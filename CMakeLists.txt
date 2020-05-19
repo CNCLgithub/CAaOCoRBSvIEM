@@ -19,7 +19,7 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/include/)
 
 file(GLOB CORBS_SRC src/*.cpp)
-set(CORBS_SRC ${CORBS_SRC} example.cpp)
+set(CORBS_SRC ${CORBS_SRC} compress.cpp)
 
 # set_target_properties(CoRBS PROPERTIES VERSION ${PROJECT_VERSION})
 # set_target_properties(CoRBS PROPERTIES PUBLIC_HEADER include/)
