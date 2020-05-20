@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
   json j;
   std::ifstream i(argv[1], std::ifstream::in);
   i >> j;
-
+    
   // READ IN ALL OF THE SIMULATION DATA AND CONFIGURATIONS
 
   // output formatting for the DMAT
@@ -90,6 +90,7 @@ int main(int argc, char* argv[])
   // 7 elements per object (4 for quat, 3 for pos), but first row is the timesteps for the simulation
   int32_t objects = (simData.rows() - 1) / 7;
 
+
   // read in the optional compression information
   // provide a custom comparator to deal with floating point keys
   auto cmp = [](double a, double b){ return (std::abs(a - b) > 1e-9) && (a < b); };
@@ -113,7 +114,6 @@ int main(int argc, char* argv[])
 
   // CREATE COMPRESSION OBJECTS (ONE PER SIMULATION OBJECT)
   
-
   // make a compressor/decompressor pair per object
   std::vector<Compressor> comps;
   std::vector<Decompressor> decomps;
